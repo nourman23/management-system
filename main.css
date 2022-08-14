@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.contact a {
+  padding: 10px;
+  margin: 5px;
+}
+
+.contact a ion-icon {
+  font-size: 26px;
+  color: grey;
+}
+
+.contact a ion-icon:hover {
+  color: rgb(82, 80, 80);
+}
