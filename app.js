@@ -23,17 +23,17 @@ use the below table to calculate the salary depends on the employee level.
 
 */
 
-function Employee(id, fullN , dep , lev , image){
+function Employee(id, fullN , dep , lev , image=""){
     this.ID=id;
     this.Full_name=fullN;
     this.Department=dep;
     
     this.Level=lev;
 
-    this.Image_URL=image;
+  
 
     this.Salary=salaryCounting(lev);
-  
+    this.Image_URL=image;
 }
 
 let employee1=new Employee(1000 , "Ghazi samer" , "Administration" , "Senior" );
@@ -43,6 +43,9 @@ let employee4=new Employee(1003 , "Safi Walid" , "Administration" , "Mid-Senior"
 let employee5=new Employee(1004 , "Omar Zaid" , "Development" , "Senior" );
 let employee6=new Employee(1005 , "Rana Saleh" , "Development" , "Junior" );
 let employee7=new Employee(1006 , "Hadi Ahmad" , "Finance" , "Mid-Senior" );
+
+
+
 //Math.random() * (max - min) + min;
 function salaryCounting(level){
 let minSal;
@@ -77,3 +80,48 @@ function render(){
     console.log("Name : " + employee6.Full_name + " , Salary =" + employee6.Salary) ;
     console.log("Name : " + employee7.Full_name + " , Salary =" + employee7.Salary) ;
 }
+
+//// DOM task
+let Employees =[employee1 ,employee2, employee3 ,employee4,employee5 , employee6 , employee7]
+let main = document.getElementById("main");
+
+let table = document.createElement("table");
+let headers = ["Employee ID" , "Full Name" , "Department" , "Level" , "Salary"]
+let tableheads= document.createElement("thead");
+let th;
+let tr=document.createElement("tr");
+
+for(let t=0 ; t<5;t++)
+{
+    th = document.createElement("th");
+    let header = document.createTextNode(headers[t]);
+    th.appendChild(header);
+tr.appendChild(th);
+}
+
+table.appendChild(tr);
+
+for(let r = 0 ; r<7 ; r++){
+    createRow(r);
+}
+
+function createRow(num){
+    let tr = document.createElement("tr");
+let i=0;
+    for (let x in Employees[num]) {
+        let tData=document.createElement("td");
+        let data = document.createTextNode(Employees[num][x]);
+        tData.appendChild(data);
+        tr.appendChild(tData);
+        i++;
+        if(i > 5)
+        tData.remove();
+          }
+          
+      
+    
+          table.appendChild(tr);
+}
+
+
+main.appendChild(table);
