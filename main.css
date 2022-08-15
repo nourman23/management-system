@@ -26,3 +26,27 @@ footer {
 .contact a ion-icon:hover {
   color: rgb(82, 80, 80);
 }
+
+table {
+  margin: 10% auto;
+  border: 1px solid grey;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+table tr {
+  width: 100%;
+}
+table tr:nth-of-type(odd) {
+  background-color: rgb(108, 107, 107);
+  color: white;
+}
+table th {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid grey;
+  background-color: rgb(148, 147, 147);
+}
+table td {
+  padding: 8px;
+  border-right: 1px solid grey;
+}
