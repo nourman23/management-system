@@ -47,7 +47,30 @@
         </div>
       </nav>
     </header>
-    <main id="main"></main>
+    <main>
+      <div id="main"></div>
+      <form action="" id="form">
+        <input type="number" id="id" placeholder="ID :" required />
+        <input type="text" id="full_n" placeholder="Full name : " required />
+        <select id="department" required>
+          <option value="" disabled selected>Department :</option>
+          <option value="administration">Administration</option>
+          <option value="marketing">Marketing</option>
+          <option value="development">Development</option>
+          <option value="finance">Finance</option>
+        </select>
+        <select name="" id="level" required>
+          <option value="" disabled selected>Level :</option>
+          <option value="Junior">Junior</option>
+          <option value="Mid-Senior">Mid_Senior</option>
+          <option value="Senior">Senior</option>
+        </select>
+        <input type="text" id="imgUrl" placeholder="image_Url" />
+        <input type="submit" id="subBtn" value="ADD" />
+      </form>
+      <h3>Our Employees</h3>
+      <div id="cardsSec"></div>
+    </main>
     <footer>
       <section>
         <div class="contact">
@@ -70,7 +93,7 @@
       </section>
     </footer>
 
-    <script src="./app.js"></script>
+    <script src="./to_cards.js"></script>
 
     <script
       type="module"

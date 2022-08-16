@@ -69,20 +69,16 @@ maxSal=2000;
             }
 return salary;
 }
-render();
+let Employees =[employee1 ,employee2, employee3 ,employee4,employee5 , employee6 , employee7]
 
-function render(){
-    console.log("Name : " + employee1.Full_name + " , Salary =" + employee1.Salary) ;
-    console.log("Name : " + employee2.Full_name + " , Salary =" + employee2.Salary) ;
-    console.log("Name : " + employee3.Full_name + " , Salary =" + employee3.Salary) ;
-    console.log("Name : " + employee4.Full_name + " , Salary =" + employee4.Salary) ;
-    console.log("Name : " + employee5.Full_name + " , Salary =" + employee5.Salary) ;
-    console.log("Name : " + employee6.Full_name + " , Salary =" + employee6.Salary) ;
-    console.log("Name : " + employee7.Full_name + " , Salary =" + employee7.Salary) ;
+render(Employees);
+
+function render(emp){
+    for(let i=0 ; i<emp.length; i++)
+    console.log("Name : " + emp[i].Full_name + " , Salary =" + emp[i].Salary) ;
 }
 
 //// DOM task
-let Employees =[employee1 ,employee2, employee3 ,employee4,employee5 , employee6 , employee7]
 let main = document.getElementById("main");
 
 let table = document.createElement("table");
@@ -90,6 +86,7 @@ let headers = ["Employee ID" , "Full Name" , "Department" , "Level" , "Salary"]
 let tableheads= document.createElement("thead");
 let th;
 let tr=document.createElement("tr");
+main.appendChild(table);
 
 for(let t=0 ; t<5;t++)
 {
@@ -104,6 +101,34 @@ table.appendChild(tr);
 for(let r = 0 ; r<7 ; r++){
     createRow(r);
 }
+
+
+
+
+
+// event task
+
+
+
+subBtn.addEventListener("click" , function(){
+ let id =parseInt( document.getElementById("id").value);
+ let full_n = document.getElementById("full_n").value;
+ let imgUrl = document.getElementById("imgUrl").value;
+ 
+ //select inp
+ let department = document.getElementById("department").value;
+ let level = document.getElementById("level").value;
+ 
+ let subBtn = document.getElementById("subBtn");
+let new_emp= new Employee(id , full_n , department , level);
+
+Employees.push(new_emp);
+
+createRow(Employees.length);
+
+
+});
+
 
 function createRow(num){
     let tr = document.createElement("tr");
@@ -122,6 +147,3 @@ let i=0;
     
           table.appendChild(tr);
 }
-
-
-main.appendChild(table);
