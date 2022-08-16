@@ -4,7 +4,28 @@
 }
 
 body {
+  position: relative;
+  height: 350vh;
+}
+main {
   height: 100vh;
+}
+
+main form {
+  height: 60vh;
+  width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main form input,
+main form select {
+  display: block;
+  padding: 8px;
+  margin-bottom: 15px;
+  width: 300px;
 }
 footer {
   position: absolute;
@@ -49,4 +70,31 @@ table th {
 table td {
   padding: 8px;
   border-right: 1px solid grey;
+}
+
+#cardsSec {
+  display: flex;
+  width: 80%;
+  margin: 10px auto;
+  flex-wrap: wrap;
+}
+h3 {
+  text-align: center;
+}
+#card {
+  display: flex;
+  flex-direction: column;
+
+  width: 16rem;
+  margin: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#card p {
+  padding: 6px;
+}
+#subBtn {
+  width: 100px;
+  border: none;
+  background-color: blueviolet;
+  color: white;
 }
