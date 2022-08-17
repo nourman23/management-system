@@ -1,28 +1,3 @@
-/*
-You will create a constructor to generate an employee object which will be rendered in the main section from your app.js file.
-Employee ID
-Full Name
-Department: 
-Administration
-Marketing
-Development
-Finance
-Level: 
-Junior
-Mid-Senior
-Senior
-Image URL
-Salary
-
-
-You will create a function for calculating the 
-salary using the provided table by generating 
-a random number between the minimum and 
-maximum salary for each level, 
-use the below table to calculate the salary depends on the employee level.
-
-*/
-
 function Employee(id, fullN , dep , lev , image=""){
     this.ID=id;
     this.Full_name=fullN;
@@ -106,16 +81,23 @@ document.forms[0].addEventListener("submit" , function(e){
      
 
 let new_emp= new Employee(parseInt( id.value) , full_n.value, department.value , level.value , imgUrl);
+new_employees.push(new_emp)
 
-new_employees.push(new_emp);
+Employees.push(new_emp)
 
-localStorage.setItem("Employees" , JSON.stringify(new_employees))
+localStorage.setItem("allemployees" , JSON.stringify(Employees))
+
 makeCard(new_emp);
-
-
 });
 
 
+function getFromLocal(){
+    let jsonArr = localStorage.getItem('allemployees');
+    let arr = JSON.parse(jsonArr);
+    Employees = arr;
+    
+ }
+ getFromLocal();
 let cardsSec = document.getElementById("cardsSec");
 for(let i=0; i <Employees.length ; i++){
 makeCard(Employees[i]);
@@ -160,4 +142,3 @@ div.appendChild(carddep);
 div.appendChild(cardLevel);
 div.appendChild(cardSalary);
 }
-
